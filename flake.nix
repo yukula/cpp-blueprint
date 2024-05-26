@@ -15,7 +15,15 @@
         with pkgs;
         {
           devShells.default = mkShell.override { stdenv = llvmPackages_18.stdenv; } {
-            buildInputs = [ clang-tools_18 ];
+            packages = [ 
+              clang-tools_18
+
+              cmake
+              ninja
+
+              fmt
+              doctest
+            ];
           };
         });
 
